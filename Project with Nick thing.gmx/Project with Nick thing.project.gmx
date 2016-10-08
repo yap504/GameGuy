@@ -22,6 +22,7 @@
     <object>objects\obj_Spawner3</object>
     <object>objects\obj_Spawner2</object>
     <object>objects\obj_Spawner1</object>
+    <object>objects\obj_Enemy2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
