@@ -8,6 +8,36 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;1000) {
+    
+    MyBullet2 = instance_create(x,y,obj_Shoot2)
+    
+    MyBullet2.direction = image_angle
+    MyBullet2.speed = 300 / room_speed
+    MyBullet2.image_angle = image_angle
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -31,15 +61,12 @@ image_angle = direction
 /* Movement and Firing */
 if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;50) {
     move_towards_point(obj_Player.x,obj_Player.y,3)
-    
-    MyBullet = instance_create(x,y,obj_Bullet)
-    
-    MyBullet.direction = image_angle
-    MyBullet.speed = 300 / room_speed
-    MyBullet.image_angle = image_angle
+
 }
+    
+/* Firing Delay */
 
-
+if (alarm[10] = -1) alarm[10] = 6.5 
 </string>
           </argument>
         </arguments>
