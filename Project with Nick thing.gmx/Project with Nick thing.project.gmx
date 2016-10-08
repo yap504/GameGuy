@@ -25,7 +25,9 @@
     <object>objects\obj_Enemy2</object>
     <object>objects\obj_Timer</object>
   </objects>
-  <rooms name="rooms"/>
+  <rooms name="rooms">
+    <room>rooms\room1</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
