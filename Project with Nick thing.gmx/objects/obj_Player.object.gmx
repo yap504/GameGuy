@@ -56,7 +56,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Movement */
+            <string>/* Location Variables */
+obj_Playerx = obj_Player
+obj_Playery = obj_Player
+
+/* Movement */
 
 MySpeed = 300 / room_speed
 
