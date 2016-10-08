@@ -16,6 +16,11 @@
     <object>objects\obj_Player</object>
     <object>objects\obj_Bullet</object>
     <object>objects\obj_Enemy</object>
+    <object>objects\obj_Spawner1234</object>
+    <object>objects\obj_Spawner4</object>
+    <object>objects\obj_Spawner3</object>
+    <object>objects\obj_Spawner2</object>
+    <object>objects\obj_Spawner1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
