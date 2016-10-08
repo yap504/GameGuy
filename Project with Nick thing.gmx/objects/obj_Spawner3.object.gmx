@@ -53,8 +53,8 @@ alarm[1] = 300
             <string>/* Wave 3 */
 
 instance_create(x,y,obj_Enemy)
-instance_create(x,y,obj_Enemy)
-instance_create(x,y,obj_Enemy)
+instance_create(x,y+32,obj_Enemy)
+instance_create(x+32,y,obj_Enemy)
 
 /* Time Until Wave 4 */
 

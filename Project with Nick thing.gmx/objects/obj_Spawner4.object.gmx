@@ -52,9 +52,9 @@ alarm[1] = 300
             <kind>1</kind>
             <string>/* Wave 4 */
 
-instance_create(x,y,obj_Enemy)
-instance_create(x,y,obj_Enemy)
-instance_create(x,y,obj_Enemy)
+instance_create(x,y+32,obj_Enemy)
+instance_create(x+32,y,obj_Enemy)
+instance_create(x+32,y+32,obj_Enemy)
 instance_create(x,y,obj_Enemy)
 
 /* Uh, done */
