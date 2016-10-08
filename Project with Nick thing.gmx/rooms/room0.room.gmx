@@ -56,6 +56,7 @@
     <instance objName="obj_Spawner1234" x="480" y="-64" name="inst_02A7BCD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Spawner1234" x="1056" y="416" name="inst_17797E73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Spawner1234" x="544" y="800" name="inst_7B5B5123" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Timer" x="352" y="32" name="inst_4DF8D3E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
