@@ -8,12 +8,14 @@
   <sprites name="sprites">
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\spr_Bullet</sprite>
+    <sprite>sprites\spr_Enemy</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_Player</object>
     <object>objects\obj_Bullet</object>
+    <object>objects\obj_Enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
