@@ -33,6 +33,33 @@ hp = 4
 mass = sprite_width * sprite_height
 
 
+alarm[0] = -1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if place_meeting(x,y,obj_Player){
+    obj_Player.hp -= 1
+    alarm[0] = 30
+}
 </string>
           </argument>
         </arguments>
@@ -65,6 +92,13 @@ move_towards_point(obj_Player.x,obj_Player.y,speed)
 image_angle = direction
 
 /* Combat */
+
+if place_meeting(x,y,obj_Player){
+    if (alarm[0] = -1){
+        obj_Player.hp -= 1
+        alarm[0] = 30
+    }
+}
 
 IncomingBullet = instance_place(x,y,obj_Bullet)
 

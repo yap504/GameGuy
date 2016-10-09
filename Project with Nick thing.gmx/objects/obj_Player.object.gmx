@@ -33,7 +33,6 @@ friction = .65
 
 hp = 5
 
-alarm[1] = -1
 </string>
           </argument>
         </arguments>
@@ -133,15 +132,9 @@ if (alarm[0] = -1) alarm[0] = 6.5
 IncomingEnemy = instance_place(x,y,obj_Enemy)
 IncomingBullet = instance_place(x,y,obj_Shoot2)
 
-if place_meeting(x,y,obj_Enemy){
-    if alarm[1] = -1{
+if place_meeting(x,y,obj_Shoot2){
     hp -= 1
-    alarm[1] = 30
-    }
 }
-
-if place_meeting(x,y,obj_Shoot2) hp -= 1
-
 if (hp = 0) instance_destroy()
 
 //Destroy the bullet
@@ -151,7 +144,7 @@ with IncomingBullet
 instance_destroy()
 }
 
-
+if (hp = 0) game_end()
 </string>
           </argument>
         </arguments>

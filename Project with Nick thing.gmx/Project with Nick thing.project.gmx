@@ -41,6 +41,7 @@
     <object>objects\obj_Menu</object>
     <object>objects\obj_Game</object>
     <object>objects\obj_ColParent</object>
+    <object>objects\obj_HpBar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>
