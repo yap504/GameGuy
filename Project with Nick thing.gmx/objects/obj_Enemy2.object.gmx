@@ -155,11 +155,11 @@ if (alarm[10] = -1) alarm[10] = 6.5
           </argument>
           <argument>
             <kind>0</kind>
-            <string>obj_Player.x</string>
+            <string>obj_Enemy2.x</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>obj_Player.y</string>
+            <string>obj_Enemy2.y</string>
           </argument>
         </arguments>
       </action>
