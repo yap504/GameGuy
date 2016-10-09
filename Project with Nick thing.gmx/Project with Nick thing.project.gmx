@@ -14,8 +14,16 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Menus">
+      <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
+      <script>scripts\ButtonPressed.gml</script>
+    </scripts>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fontGood</font>
+    <font>fonts\fontTitle</font>
+    <font>fonts\fontMenu</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_Player</object>
@@ -29,9 +37,12 @@
     <object>objects\obj_Enemy2</object>
     <object>objects\obj_Timer</object>
     <object>objects\obj_Shoot2</object>
+    <object>objects\obj_Menu</object>
+    <object>objects\obj_Game</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room1</room>
+    <room>rooms\rStart</room>
+    <room>rooms\rGame</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
