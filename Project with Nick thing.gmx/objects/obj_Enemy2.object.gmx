@@ -78,17 +78,24 @@
           <argument>
             <kind>1</kind>
             <string>/* Facing */
-image_angle = direction
+image_angle = point_direction(x,y,obj_Player.x,obj_Player.y)
 
-/* Movement and Firing */
-if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;50) {
+/* Movement */
+if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200) {
     move_towards_point(obj_Player.x,obj_Player.y,3)
 
 }
-    
+if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&lt;200) {
+    speed = 0
+}
 /* Firing Delay */
 
-if (alarm[10] = -1) alarm[10] = 6.5 
+if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;600) {
+    alarm [0] = -1 
+}
+if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&lt;600) {
+    alarm [0] = 6.5
+}
 </string>
           </argument>
         </arguments>
