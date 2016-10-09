@@ -79,6 +79,7 @@ if alarm[11] = -1 alarm[11] = 60
           <argument>
             <kind>1</kind>
             <string>draw_set_color(c_white)
+draw_set_font(fontGood)
 draw_text(x,y, "Time: " + string(GameTime))
 </string>
           </argument>
