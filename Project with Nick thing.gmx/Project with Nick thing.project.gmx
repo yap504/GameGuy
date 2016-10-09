@@ -19,6 +19,7 @@
       <script>scripts\DrawTextAndUpdateCurrentY.gml</script>
       <script>scripts\ButtonPressed.gml</script>
     </scripts>
+    <script>scripts\EnemyCollision.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fontGood</font>
@@ -39,6 +40,7 @@
     <object>objects\obj_Shoot2</object>
     <object>objects\obj_Menu</object>
     <object>objects\obj_Game</object>
+    <object>objects\obj_ColParent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>
