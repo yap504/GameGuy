@@ -29,6 +29,8 @@
 
 //Mass stuff
 mass = sprite_width * sprite_height
+
+hp = 2
 </string>
           </argument>
         </arguments>
@@ -95,6 +97,21 @@ if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200){
     if alarm[0] &lt;11{
         alarm[0] = 10
     }
+}
+
+/* Combat */
+
+IncomingBullet = instance_place(x,y,obj_Bullet)
+
+if place_meeting(x,y,obj_Bullet) hp -= 1
+
+if (hp = 0) instance_destroy()
+
+if instance_exists(IncomingBullet) {
+
+//Destroy the bullet
+with IncomingBullet 
+instance_destroy()
 }
 </string>
           </argument>

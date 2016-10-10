@@ -102,9 +102,9 @@ if keyboard_check(ord('S')) vspeed += 3
 
 /* Movement restrictions */
 
-if (speed &gt; 6) speed = 6
+if (speed &gt; 5) speed = 5
 
-if (speed &lt; -6) speed = -6
+if (speed &lt; -5) speed = -5
 
 /* Facing */
 
