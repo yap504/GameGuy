@@ -11,6 +11,7 @@
     <sprite>sprites\spr_Enemy</sprite>
     <sprite>sprites\spr_Enemy2</sprite>
     <sprite>sprites\spr_Shoot2</sprite>
+    <sprite>sprites\spr_Enemy3</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
