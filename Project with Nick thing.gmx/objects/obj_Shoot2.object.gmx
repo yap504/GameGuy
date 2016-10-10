@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_towards_point(spr_Player.x,spr_Player.y,8)
+            <string>move_towards_point(obj_Player.x,obj_Player.y,8)
 
 image_angle = direction
 </string>

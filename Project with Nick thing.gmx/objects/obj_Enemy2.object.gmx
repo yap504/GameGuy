@@ -94,8 +94,8 @@ if (alarm[0] = -1) alarm[0] = 60
 /* Firing Restriction */
 
 if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200){
-    if alarm[0] &lt;11{
-        alarm[0] = 10
+    if alarm[0] &lt;10{
+        alarm[0] = 9
     }
 }
 
