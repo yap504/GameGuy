@@ -105,8 +105,10 @@ IncomingBullet = instance_place(x,y,obj_Bullet)
 
 if place_meeting(x,y,obj_Bullet) hp -= 1
 
-if (hp = 0) instance_destroy()
-
+if (hp = 0) { 
+    instance_create(x,y,obj_Enemy3)    
+    instance_destroy()
+}
 if instance_exists(IncomingBullet) {
 
 //Destroy the bullet
