@@ -28,6 +28,7 @@
             <string>/* Wave 1 */
 
 instance_create(x,y,obj_Enemy)
+instance_create(x,y,obj_Enemy2)
 
 /* Time Until Wave 2 */
 
@@ -60,6 +61,8 @@ instance_create(x,y,obj_Enemy)
 instance_create(x,y+32,obj_Enemy)
 instance_create(x+32,y,obj_Enemy)
 instance_create(x+32,y+32,obj_Enemy)
+instance_create(x,y,obj_Enemy2)
+instance_create(x,y,obj_Enemy2)
 
 /* Uh, done */
 </string>
@@ -89,6 +92,7 @@ instance_create(x+32,y+32,obj_Enemy)
 instance_create(x,y,obj_Enemy)
 instance_create(x,y+32,obj_Enemy)
 instance_create(x+32,y,obj_Enemy)
+instance_create(x,y,obj_Enemy2)
 
 /* Time Until Wave 4 */
 
@@ -120,6 +124,7 @@ alarm[3] = 600
 
 instance_create(x,y,obj_Enemy)
 instance_create(x,y+32,obj_Enemy)
+instance_create(x,y,obj_Enemy2)
 
 /* Time Until Wave 3 */
 
