@@ -33,6 +33,33 @@ mass = sprite_width * sprite_height
 hp = 2
 
 Shoot_Cooldown = 50
+
+target_distance = distance_to_object(obj_Player)
+
+jank = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>jank = false
 </string>
           </argument>
         </arguments>
@@ -62,11 +89,6 @@ image_angle = point_direction(x,y,obj_Player.x,obj_Player.y)
 if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200) {
     move_towards_point(obj_Player.x,obj_Player.y,3)
 
-}
-if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&lt;200) {
-    speed = 0
-}
-
 /* Firing Restriction */
 
 Shoot_Cooldown -= 1;                                 //Lower the shooting cooldown timer
@@ -85,15 +107,26 @@ if (Shoot_Cooldown == 0)                                      //If enemy can sho
     }
 }
 
+}
+
+if target_distance &lt; 200 {
+    speed = 0
+}
+
 /* Combat */
 
 IncomingBullet = instance_place(x,y,obj_Bullet)
 
-if place_meeting(x,y,obj_Bullet) hp -= 1
+if place_meeting(x,y,obj_Bullet){
+    hp -= 1
+    obj_Player.charge += .5
+}
 
 if (hp = 0) { 
     instance_create(x,y,obj_Enemy3)    
     instance_destroy()
+    obj_Enemy3.jank = true
+    obj_Enemy3.alarm[1] = 60
 }
 if instance_exists(IncomingBullet) {
 
@@ -101,6 +134,18 @@ if instance_exists(IncomingBullet) {
 with IncomingBullet 
 instance_destroy()
 }
+
+//Railgun
+
+if place_meeting(x,y,obj_Shoot3){
+    if jank = false{
+        hp -= 2
+        jank = true
+        alarm[1] = 60
+    }
+}
+
+if (hp &lt; 0) hp = 0
 </string>
           </argument>
         </arguments>

@@ -12,6 +12,7 @@
     <sprite>sprites\spr_Enemy2</sprite>
     <sprite>sprites\spr_Shoot2</sprite>
     <sprite>sprites\spr_Enemy3</sprite>
+    <sprite>sprites\spr_Shoot3</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -44,12 +45,14 @@
     <objects name="Bullets">
       <object>objects\obj_Bullet</object>
       <object>objects\obj_Shoot2</object>
+      <object>objects\obj_Shoot3</object>
     </objects>
     <object>objects\obj_Timer</object>
     <object>objects\obj_Menu</object>
     <object>objects\obj_Game</object>
     <object>objects\obj_ColParent</object>
     <object>objects\obj_HpBar</object>
+    <object>objects\obj_ChargeBar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rStart</room>

@@ -34,6 +34,31 @@ mass = sprite_width * sprite_height
 
 
 alarm[0] = -1
+
+jank = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>jank = false
 </string>
           </argument>
         </arguments>
@@ -102,7 +127,10 @@ if place_meeting(x,y,obj_Player){
 
 IncomingBullet = instance_place(x,y,obj_Bullet)
 
-if place_meeting(x,y,obj_Bullet) hp -= 1
+if place_meeting(x,y,obj_Bullet){
+    hp -= 1
+    obj_Player.charge += .5
+}
 
 if (hp = 0) instance_destroy()
 
@@ -112,6 +140,18 @@ if instance_exists(IncomingBullet) {
 with IncomingBullet 
 instance_destroy()
 }
+
+//Railgun
+
+if place_meeting(x,y,obj_Shoot3){
+    if jank = false{
+        hp -= 2
+        jank = true
+        alarm[1] = 60
+    }
+}
+
+if (hp &lt; 0) hp = 0
 </string>
           </argument>
         </arguments>

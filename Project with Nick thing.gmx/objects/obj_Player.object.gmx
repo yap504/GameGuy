@@ -34,7 +34,12 @@ friction = .65
 hp = 5
 
 //Mass var
+
 mass = sprite_width * sprite_height
+
+charge = 0
+
+firing = false
 </string>
           </argument>
         </arguments>
@@ -94,13 +99,29 @@ obj_Playery = obj_Player
 
 /* Movement */
 
-if keyboard_check(ord('A')) hspeed -= 3
+if keyboard_check(ord('A')){
+    if firing = false{
+        hspeed -= 3
+    }
+}
 
-if keyboard_check(ord('D')) hspeed += 3
+if keyboard_check(ord('D')){
+    if firing = false{
+        hspeed += 3
+    }
+}
 
-if keyboard_check(ord('W')) vspeed -= 3
+if keyboard_check(ord('W')){
+    if firing = false{
+        vspeed -= 3
+    }
+}
 
-if keyboard_check(ord('S')) vspeed += 3
+if keyboard_check(ord('S')){
+    if firing = false{
+        vspeed += 3
+    }
+}
 
 /* Movement restrictions */
 
@@ -121,6 +142,20 @@ if mouse_check_button_pressed(mb_left) {
     MyBullet.direction = image_angle
     MyBullet.speed = 500 / room_speed
     MyBullet.image_angle = image_angle
+}
+
+/* Charge */
+
+if (charge &gt; 2) charge = 2
+
+/* Alternate Fire */
+
+if mouse_check_button(mb_right){
+    if (charge = 2) {
+        charge -= 2
+        instance_create(x,y,obj_Shoot3)
+        firing = true
+    }
 }
 
 /* Firing Delay */
@@ -144,13 +179,15 @@ if place_meeting(x,y,obj_Shoot2){
 if (hp = 0) instance_destroy()
 
 //Destroy the bullet
-if instance_exists(IncomingBullet) {
 
+if instance_exists(IncomingBullet) {
 with IncomingBullet 
 instance_destroy()
 }
 
 if (hp = 0) game_end()
+
+if (alarm[1] &lt; -1) alarm[1] = -1
 </string>
           </argument>
         </arguments>
