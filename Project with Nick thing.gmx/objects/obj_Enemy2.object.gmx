@@ -31,29 +31,8 @@
 mass = sprite_width * sprite_height
 
 hp = 2
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(x,y,obj_Shoot2)
+
+Shoot_Cooldown = 50
 </string>
           </argument>
         </arguments>
@@ -87,15 +66,22 @@ if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200) 
 if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&lt;200) {
     speed = 0
 }
-/* Firing Delay */
-
-if (alarm[0] = -1) alarm[0] = 60
 
 /* Firing Restriction */
 
-if (point_distance(obj_Enemy2.x,obj_Enemy2.y,obj_Player.x,obj_Player.y)&gt;200){
-    if alarm[0] &lt;10{
-        alarm[0] = 9
+Shoot_Cooldown -= 1;                                 //Lower the shooting cooldown timer
+if (Shoot_Cooldown &lt; 0) then Shoot_Cooldown = 0     //Prevents timer from counting down           further than 0.
+target_distance = distance_to_object(obj_Player);    //Distance to the player from enemy.
+
+if (target_distance &lt; 200)                 //If player within the range of enemy
+{
+//image_angle = point_direction(x,y,obj_player.x,obj_player.y);      //Enemy faces the player.
+if (Shoot_Cooldown == 0)                                      //If enemy can shoot (cooldown ready)
+    {
+    bullet = instance_create(x,y,obj_Shoot2);                  //Create a bullet relative to enemy
+    bullet.direction = point_direction(x,y,obj_Player.x,obj_Player.y);   //Shoot it towards player
+    bullet.speed = 8;                                           //Give it speed
+    Shoot_Cooldown = 50;    //Set the new cooldown time between low and high thresholds.
     }
 }
 
